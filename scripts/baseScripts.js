@@ -6,8 +6,12 @@ var xhr = new XMLHttpRequest();                 // Create XMLHttpRequest object
 
 xhr.onload = function() {    
     // When readystate changes
-  
-     responseObject = JSON.parse(xhr.responseText);
+    
+    // Testing the console Status
+    console.log(xhr.status);
+    
+    
+    responseObject = JSON.parse(xhr.responseText);
 
     // BUILD UP STRING WITH NEW CONTENT (could also use DOM manipulation)
     var newContent = '';
@@ -23,10 +27,10 @@ xhr.onload = function() {
     // Update the page with the new content
     document.getElementById('content').innerHTML = newContent;
 
-  //}
+  
 };
 
-xhr.open('GET', 'data/data.json', true);        // Prepare the request
+xhr.open('GET', 'scripts/jsonData.json', true);        // Prepare the request
 xhr.send(null);                                 // Send the request
 
 // When working locally in Firefox, you may see an error saying that the JSON is not well-formed.
